@@ -1,0 +1,25 @@
+.input__container input {
+  display: flex;
+  width: 525px;
+  padding: 6px 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px;
+  border: 2px solid var(--gray-300, #d1d5db);
+  outline: 0;
+  background-color: transparent;
+  height: 35px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.input__container {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+form img {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
