@@ -1,8 +1,12 @@
 import "./Home.css";
-import { Hero, SearchBar } from "../../components";
+import { Hero, MovieCard, SearchBar } from "../../components";
 import logo from "../../assets/Logo.png";
 import Menu from "../../assets/Menu.png";
 import { Link } from "react-router-dom";
+import arrow from "../../assets/arrow-right.png";
+import { useState, useEffect } from "react";
+import { getInitialMovies } from "../../utils/fetchFromApi";
+
 const Navbar = () => (
   <nav>
     <Link to="/">
@@ -18,11 +22,32 @@ const Navbar = () => (
 );
 
 const Home = () => {
+  const [movie, setMovie] = useState([]);
+  useEffect(() => {
+    getInitialMovies().then((data) => {
+      setMovie(data?.results);
+    });
+  }, []);
   return (
-    <div className="app__home">
-      <Navbar />
-      <Hero />
-    </div>
+    <>
+      <div className="app__home">
+        <Navbar />
+        <Hero />
+      </div>
+      <div className="padding-movie">
+        <div className="feature">
+          <h3>Featured Today</h3>
+          <div className="see__more">
+            <p>See More</p>
+            <img src={arrow} alt="arrow__right" />
+          </div>
+        </div>
+        <div className="movie__card__container">
+          {movie &&
+            movie.map((item) => <MovieCard key={item?.id} item={item} />)}
+        </div>
+      </div>
+    </>
   );
 };
 

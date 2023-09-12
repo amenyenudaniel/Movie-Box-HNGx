@@ -7,7 +7,7 @@
 }
 
 .app__hero {
-  padding-left: 8%;
+  padding-left: 5.5%;
   margin-top: 3rem;
 }
 .app__hero__content h1 {
@@ -113,4 +113,11 @@
   width: 20px;
   height: 2px;
   background-color: white;
+}
+
+@media screen and (max-height: 1000px) {
+  .app__hero {
+    padding-left: 2.4%;
+    margin-top: 3rem;
+  }
 }

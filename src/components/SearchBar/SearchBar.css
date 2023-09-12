@@ -23,3 +23,9 @@ form img {
   right: 10px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 650px) {
+  .input__container input {
+    width: 325px;
+  }
+}

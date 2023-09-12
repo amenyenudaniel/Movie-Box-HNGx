@@ -11,7 +11,7 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 15%;
+  padding: 1rem 10%;
   align-items: center;
   gap: 1rem;
 }
@@ -37,4 +37,58 @@ nav {
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.see__more {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.feature h3 {
+  color: #000;
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.see__more p {
+  color: var(--rose-700, #be123c);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.movie__card__container {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.padding-movie {
+  padding: 1rem 10%;
+}
+
+@media screen and (max-height: 1000px) {
+  .app__home {
+    height: 100vh;
+  }
+  .padding-movie {
+    padding: 1rem 5%;
+  }
+  nav {
+    padding: 1rem 5%;
+  }
 }

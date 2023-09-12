@@ -1,0 +1,31 @@
+.movie__card {
+  width: 300px;
+  height: 490px;
+  color: unset;
+  text-decoration: none;
+}
+.movie-card:hover {
+  opacity: 0.5;
+  border: 2px solid red;
+}
+.movie__content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+}
+.movie__content h6 {
+  color: var(--gray-900, #111827);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.movie__content p {
+  color: var(--gray-400, #080b11);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
