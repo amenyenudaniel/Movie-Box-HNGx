@@ -3,7 +3,7 @@ import "./Moviecard.css";
 import { Link } from "react-router-dom";
 const MovieCard = ({ item: { title, release_date, poster_path, id } }) => {
   const releaseDate = new Date(release_date);
-  const options = { year: "numeric", month: "long", day: "numeric" };
+  const options = { year: "numeric" };
   const utcReleaseDate = releaseDate.toLocaleDateString("en-US", options);
 
   return (
