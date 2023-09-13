@@ -10,7 +10,6 @@ import play from "../../assets/Play.png";
 const MovieDetails = ({ match }) => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
-  console.log(movieDetails);
   useEffect(() => {
     const apiKey = "6d77f6ad74fe305e31119672f2252108";
     const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
@@ -36,7 +35,7 @@ const MovieDetails = ({ match }) => {
   const utcReleaseDate = releaseDate.toLocaleDateString("en-US", options);
   return (
     <>
-      <nav>
+      <div className="navbar__movieDetails">
         <Link to="/">
           <img src={logo} alt="logo" className="logo" />
         </Link>
@@ -46,7 +45,7 @@ const MovieDetails = ({ match }) => {
           <p>Sign in</p>
           <img src={Menu} alt="menu" />
         </div>
-      </nav>
+      </div>
       <div className="app__movieDetails">
         <a href={movieDetails?.homepage} target="__blank">
           <div className="react__player">
@@ -55,9 +54,6 @@ const MovieDetails = ({ match }) => {
               alt="movie__image"
               data-testid="movie-poster"
             />
-            <div className="button__image">
-              <img src={play} alt="play__button" />
-            </div>
           </div>
         </a>
         <div className="movie__details-contents">

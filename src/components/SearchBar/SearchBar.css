@@ -24,8 +24,14 @@ form img {
   cursor: pointer;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1200px) {
   .input__container input {
-    width: 325px;
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .input__container input {
+    width: 300px;
   }
 }

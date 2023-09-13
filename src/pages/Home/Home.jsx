@@ -7,31 +7,44 @@ import arrow from "../../assets/arrow-right.png";
 import { useState, useEffect } from "react";
 import { getInitialMovies } from "../../utils/fetchFromApi";
 
-const Navbar = () => (
-  <nav>
-    <Link to="/">
-      <img src={logo} alt="logo" className="logo" />
-    </Link>
+const Navbar = ({ handleSearch, handleChange, handleSubmit, movieTitle }) => {
+  return (
+    <nav>
+      <Link to="/" className="logo">
+        <img src={logo} alt="logo" className="logo" />
+      </Link>
 
-    <SearchBar />
-    <div className="app__signIn">
-      <p>Sign in</p>
-      <img src={Menu} alt="menu" />
-    </div>
-  </nav>
-);
+      <SearchBar
+        handleSearch={handleSearch}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        movieTitle={movieTitle}
+      />
+      <div className="app__signIn">
+        <p>Sign in</p>
+        <img src={Menu} alt="menu" />
+      </div>
+    </nav>
+  );
+};
 
-const Home = () => {
+const Home = ({ handleSearch, handleChange, handleSubmit, movieTitle }) => {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
     getInitialMovies().then((data) => {
       setMovie(data?.results);
     });
   }, []);
+
   return (
     <>
       <div className="app__home">
-        <Navbar />
+        <Navbar
+          handleSearch={handleSearch}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          movieTitle={movieTitle}
+        />
         <Hero />
       </div>
       <div className="padding-movie">

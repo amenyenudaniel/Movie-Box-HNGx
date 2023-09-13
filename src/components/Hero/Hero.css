@@ -121,3 +121,45 @@
     margin-top: 3rem;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .app__hero__content {
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .app__hero {
+    padding-left: 2rem;
+    margin-top: 3rem;
+  }
+  .app__hero__content h1 {
+    font-size: 2.5rem;
+  }
+
+  .rating {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .rating p {
+    font-size: 1rem;
+  }
+
+  .imbd__image {
+    width: 25px;
+    height: 13px;
+  }
+
+  .movie__description {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .app__hero__numbers p {
+    font-size: 0.9rem;
+  }
+
+  .active h6 {
+    color: white;
+    font-size: 1rem;
+  }
+}

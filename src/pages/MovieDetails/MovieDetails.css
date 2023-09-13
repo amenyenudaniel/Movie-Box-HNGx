@@ -2,10 +2,10 @@
   padding: 2rem 2rem;
 }
 
-nav {
+.navbar__movieDetails {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 10%;
+  padding: 1rem 5%;
   align-items: center;
   gap: 1rem;
   background-color: black;
@@ -36,6 +36,7 @@ nav {
 
 .react__player {
   height: 50vh;
+  object-fit: cover;
   width: 50%;
   margin-top: 3rem;
   position: relative;
@@ -50,24 +51,6 @@ nav {
   width: 100%;
   object-fit: cover;
   border-radius: 2rem;
-}
-
-.button__image {
-  flex-shrink: 0;
-  position: absolute;
-  fill: rgba(255, 255, 255, 0.35);
-  stroke-width: 2px;
-  stroke: rgba(232, 232, 232, 0.2);
-  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
-  backdrop-filter: blur(2px);
-  width: 100px;
-  height: 79px;
-}
-
-.button__image img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
 }
 
 .movie__details-contents {
@@ -88,6 +71,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .genre {
@@ -126,4 +110,66 @@ nav {
   font-size: 1.1rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 800;
+}
+
+@media screen and (max-height: 1000px) {
+  .app__home {
+    height: 100vh;
+  }
+  .padding-movie {
+    padding: 1rem 5%;
+  }
+  .navbar__movieDetails {
+    padding: 1rem 5%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__movieDetails {
+    padding: 1rem 1rem;
+  }
+
+  .app__signIn {
+    gap: 15px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .app__signIn p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .navbar__movieDetails {
+    padding: 1rem 1rem;
+  }
+
+  .app__signIn p {
+    display: none;
+  }
+  .app__signIn img {
+    display: none;
+  }
+
+  .logo {
+    width: 100px;
+  }
+  .react__player {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .movie__details-contents {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 570px) {
+  .navbar__movieDetails {
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }

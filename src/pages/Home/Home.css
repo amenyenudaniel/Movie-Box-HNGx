@@ -92,3 +92,60 @@ nav {
     padding: 1rem 5%;
   }
 }
+
+@media screen and (max-width: 960px) {
+  nav {
+    padding: 1rem 1rem;
+  }
+
+  .app__signIn {
+    gap: 15px;
+  }
+
+  .logo {
+    width: 150px;
+  }
+
+  .app__signIn p {
+    font-size: 16px;
+  }
+  .app__home {
+    width: 100%;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  nav {
+    padding: 1rem 1rem;
+  }
+
+  .app__signIn p {
+    display: none;
+  }
+  .app__signIn img {
+    display: none;
+  }
+
+  .logo {
+    width: 100px;
+  }
+  .feature {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .see__more {
+    display: none;
+  }
+  .feature h3 {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 570px) {
+  nav {
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
