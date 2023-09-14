@@ -1,0 +1,174 @@
+.app__sidebar {
+  width: 226px;
+  height: 100%;
+  border-radius: 0px 45px 45px 0px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: #fff;
+  position: fixed;
+  padding: 2rem 0;
+  overflow-y: auto;
+  left: 0;
+}
+
+.app__sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 5rem;
+  padding-left: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.logos h3 {
+  font-size: 1.23rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sidebar__links__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.sidebar__link {
+  text-decoration: none;
+  color: rgb(26, 20, 20);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem 3rem;
+}
+.sidebar__link i,
+.selected i {
+  font-size: 20px;
+  color: rgb(91, 90, 90);
+}
+.sidebar__link p,
+.selected p {
+  color: #666;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: normal;
+}
+.sidebar__link:hover {
+  background: rgba(190, 18, 60, 0.1);
+  transition: 0.3s;
+}
+.selected {
+  text-decoration: none;
+  color: rgb(26, 20, 20);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem 3rem;
+  background: rgba(190, 18, 60, 0.1);
+  border-right: 5px solid #f90845de;
+}
+
+.sidebar__quiz {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(190, 18, 60, 0.7);
+  background: rgba(248, 231, 235, 0.4);
+  padding: 2rem 1rem;
+  flex-shrink: 0;
+}
+
+.sidebar__quiz :nth-child(1) {
+  color: rgba(51, 51, 51, 0.8);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar__quiz :nth-child(2) {
+  color: #282626;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 0.6rem;
+}
+
+.sidebar__quiz button {
+  display: flex;
+  margin: 0 auto;
+  width: 112px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: 30px;
+  color: #be123c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: rgba(190, 18, 60, 0.2);
+  border: none;
+  outline: none;
+}
+
+.sidebar__quiz button:hover {
+  border: 1px solid #be123c;
+  cursor: pointer;
+}
+
+.sidebar__logout {
+  display: flex;
+  margin-top: 4rem;
+  margin-left: 1.5rem;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+}
+
+.sidebar__logout p {
+  font-weight: 600;
+  color: #282626;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.1rem;
+}
+.logo__nav {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  background-color: #c8c6c6;
+  display: none;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.logo__nav img {
+  width: 40px;
+  object-fit: contain;
+  height: 40px;
+}
+
+@media screen and (max-width: 953px) {
+  .app__sidebar {
+    display: none;
+  }
+  .logo__nav {
+    display: flex;
+  }
+}

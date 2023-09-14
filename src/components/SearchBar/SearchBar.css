@@ -35,3 +35,9 @@ form img {
     width: 300px;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .input__container input {
+    width: 100%;
+  }
+}

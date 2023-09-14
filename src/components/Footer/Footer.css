@@ -28,19 +28,50 @@ footer {
   gap: 48px;
 }
 .app__footer__links * {
-  color: var(--gray-900, #111827);
-  font-family: DM Sans;
+  color: var(--gray-900, #33405d);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  cursor: pointer;
 }
 
+.app__footer__links *:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.4s;
+}
 .copyright {
   color: var(--gray-500, #6b7280);
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .app__footer__icons {
+    gap: 18px;
+  }
+
+  .app__footer__links {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  .app__footer__links * {
+    font-size: 17px;
+  }
+
+  .copyright {
+    font-size: 17px;
+    font-style: normal;
+    width: 100%;
+  }
 }

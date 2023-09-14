@@ -1,45 +1,15 @@
+.app__movieDetails__container {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 14rem;
+}
 .app__movieDetails {
   padding: 2rem 2rem;
 }
 
-.navbar__movieDetails {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 5%;
-  align-items: center;
-  gap: 1rem;
-  background-color: black;
-}
-
-.app__signIn {
-  display: flex;
-  align-items: center;
-  gap: 27px;
-  cursor: pointer;
-}
-
-.logo {
-  width: 186px;
-  object-fit: contain;
-  height: 50px;
-  cursor: pointer;
-}
-
-.app__signIn p {
-  color: #fff;
-  font-family: DM Sans;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-}
-
 .react__player {
-  height: 50vh;
-  object-fit: cover;
-  width: 50%;
-  margin-top: 3rem;
-  position: relative;
+  height: 70vh;
+  width: 1000px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +20,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 2rem;
+  border-radius: 1rem;
 }
 
 .movie__details-contents {
@@ -81,7 +51,7 @@
 }
 
 .movie__overview {
-  max-width: 500px;
+  max-width: 60%;
   margin-top: 1.5rem;
 }
 
@@ -112,6 +82,40 @@
   font-weight: 800;
 }
 
+.play__btn {
+  position: absolute;
+}
+
+.play__btn:hover {
+  opacity: 0.6;
+}
+@media screen and (max-width: 1305px) {
+  .react__player {
+    height: 60vh;
+    width: 700px;
+  }
+
+  .react__player img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1009px) {
+  .react__player {
+    height: 500px;
+    width: 100%;
+  }
+
+  .react__player img {
+    height: 100%;
+    width: 100%;
+  }
+  .movie__overview {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+}
 @media screen and (max-height: 1000px) {
   .app__home {
     height: 100vh;
@@ -119,44 +123,14 @@
   .padding-movie {
     padding: 1rem 5%;
   }
-  .navbar__movieDetails {
-    padding: 1rem 5%;
+}
+@media screen and (max-width: 953px) {
+  .app__movieDetails__container {
+    margin-left: 0rem;
+    margin-top: 3rem;
   }
 }
-
-@media screen and (max-width: 960px) {
-  .navbar__movieDetails {
-    padding: 1rem 1rem;
-  }
-
-  .app__signIn {
-    gap: 15px;
-  }
-
-  .logo {
-    width: 150px;
-  }
-
-  .app__signIn p {
-    font-size: 16px;
-  }
-}
-
 @media screen and (max-width: 720px) {
-  .navbar__movieDetails {
-    padding: 1rem 1rem;
-  }
-
-  .app__signIn p {
-    display: none;
-  }
-  .app__signIn img {
-    display: none;
-  }
-
-  .logo {
-    width: 100px;
-  }
   .react__player {
     height: 100%;
     object-fit: cover;
@@ -164,12 +138,5 @@
   }
   .movie__details-contents {
     flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 570px) {
-  .navbar__movieDetails {
-    padding: 1rem 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 }

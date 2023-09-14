@@ -1,5 +1,5 @@
 import "./Home.css";
-import { Hero, MovieCard, SearchBar } from "../../components";
+import { Hero, Loader, MovieCard, SearchBar } from "../../components";
 import logo from "../../assets/Logo.png";
 import Menu from "../../assets/Menu.png";
 import { Link } from "react-router-dom";
@@ -30,10 +30,19 @@ const Navbar = ({ handleSearch, handleChange, handleSubmit, movieTitle }) => {
 
 const Home = ({ handleSearch, handleChange, handleSubmit, movieTitle }) => {
   const [movie, setMovie] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    getInitialMovies().then((data) => {
-      setMovie(data?.results);
-    });
+    try {
+      setLoading(true);
+      getInitialMovies().then((data) => {
+        setMovie(data?.results);
+      });
+    } catch (error) {
+      alert(error);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   return (
@@ -55,10 +64,16 @@ const Home = ({ handleSearch, handleChange, handleSubmit, movieTitle }) => {
             <img src={arrow} alt="arrow__right" />
           </div>
         </div>
-        <div className="movie__card__container">
-          {movie &&
-            movie.map((item) => <MovieCard key={item?.id} item={item} />)}
-        </div>
+        {loading ? (
+          <Loader />
+        ) : (
+          <div className="movie__card__container">
+            {movie &&
+              movie
+                .slice(0, 10)
+                .map((item) => <MovieCard key={item?.id} item={item} />)}
+          </div>
+        )}
       </div>
     </>
   );
