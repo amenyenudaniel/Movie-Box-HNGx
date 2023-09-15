@@ -5,5 +5,4 @@ import SearchBar from "./SearchBar/SearchBar";
 import ScrollToTop from "./ScrollToTop";
 import Loader from "./Loader/Loader";
 import SideBar from "./SideBar/SideBar";
-
 export { MovieCard, Footer, Hero, SearchBar, ScrollToTop, Loader, SideBar };

@@ -1,0 +1,43 @@
+.search__container {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap;
+  padding: 1rem 10%;
+}
+
+.app__search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 10%;
+  background-color: rgb(14, 10, 10);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+}
+
+.logo__search {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.logo__search h3 {
+  font-size: 1.2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.search__name {
+  margin-top: 6rem;
+  padding-left: 10%;
+  margin-bottom: 2rem;
+}
+
+.search__name span {
+  color: rgb(245, 54, 54);
+}

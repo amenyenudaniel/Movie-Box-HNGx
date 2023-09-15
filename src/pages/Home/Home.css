@@ -73,7 +73,7 @@ nav {
 
 .movie__card__container {
   display: flex;
-  gap: 80px;
+  gap: 70px;
   flex-wrap: wrap;
 }
 .padding-movie {

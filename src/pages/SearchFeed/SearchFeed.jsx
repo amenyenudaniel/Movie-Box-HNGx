@@ -1,40 +1,48 @@
-// import "./SearchFeed.css";
-// import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import { getInitialMovies } from "../../utils/fetchFromApi";
+import "./SearchFeed.css";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { getMovieSearchResults } from "../../utils/fetchFromApi";
+import { Loader, MovieCard, SearchBar } from "../../components";
+const SearchFeed = () => {
+  const { movieTitle } = useParams();
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-// const SearchFeed = () => {
-//   const { movieTitle } = useParams();
-//   const [movies, setMovies] = useState([]);
-//   const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    try {
+      getMovieSearchResults(`${movieTitle}`).then((data) => {
+        setMovies(data?.results);
+      });
+    } catch (error) {
+      alert(error);
+    } finally {
+      setLoading(false);
+    }
+  }, [loading, movies, movieTitle]);
 
-//   useEffect(() => {
-//     getInitialMovies().then((data) => console.log(data));
-//   }, []);
-//   // useEffect(() => {
-//   //   const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
-//   //   const apiUrl = `https://api.themoviedb.org/3/trending/movie/day?language=en-US?api_key=${apiKey}`;
+  if (loading) {
+    return <Loader />;
+  }
+  return (
+    <>
+      <div className="app__search">
+        <Link className="logo__search" to={"/"}>
+          <img src="/tv.png" alt="logo" />
+          <h3>MovieBox</h3>
+        </Link>
 
-//   //   fetch(apiUrl)
-//   //     .then((response) => {
-//   //       if (!response.ok) {
-//   //         throw new Error("Network response was not ok");
-//   //       }
-//   //       return response.json();
-//   //     })
-//   //     .then((data) => {
-//   //       setMovies(data.results);
-//   //       setLoading(false);
-//   //     })
-//   //     .catch((error) => {
-//   //       console.error("Error fetching Search Details:", error);
-//   //       setLoading(false);
-//   //     });
+        <SearchBar />
+      </div>
+      <h1 className="search__name">
+        Search Results For: <span>{movieTitle}</span>
+      </h1>
 
-//   //   console.log(movies);
-//   // }, []);
+      <div className="search__container">
+        {movies && movies?.map((item) => <MovieCard item={item} />)}
+      </div>
+    </>
+  );
+};
 
-//   return <div>Heyyyyyyyyy</div>;
-// };
-
-// export default SearchFeed;
+export default SearchFeed;

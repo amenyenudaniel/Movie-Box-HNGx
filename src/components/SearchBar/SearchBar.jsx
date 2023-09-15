@@ -1,7 +1,7 @@
 import "./SearchBar.css";
 import SearchIcon from "../../assets/search.svg";
 
-const SearchBar = ({ handleChange, handleSubmit, query }) => {
+const SearchBar = ({ handleChange, handleSubmit, movieTitle }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input__container">
@@ -10,7 +10,7 @@ const SearchBar = ({ handleChange, handleSubmit, query }) => {
           placeholder="What do you want to watch?"
           required
           onChange={handleChange}
-          value={query}
+          value={movieTitle}
         />
         <img src={SearchIcon} alt="search-icon" />
       </div>
