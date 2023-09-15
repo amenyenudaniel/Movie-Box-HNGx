@@ -76,7 +76,9 @@ const MovieDetails = () => {
             </div>
           </div>
           <p className="status">{movieDetails?.status}</p>
-          <p className="runtime">{movieDetails?.runtime} Minutes</p>
+          <p className="runtime" data-testid="movie-runtime">
+            {movieDetails?.runtime} Minutes
+          </p>
           <div className="movie__overview">
             <p>{movieDetails?.overview}</p>
           </div>
