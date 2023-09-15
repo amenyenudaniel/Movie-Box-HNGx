@@ -1,6 +1,6 @@
 import "./Error.css";
 const Error = () => {
-  return <div>Error</div>;
+  return <h1 className="error">Opps! Page Not Found. Try Again</h1>;
 };
 
 export default Error;

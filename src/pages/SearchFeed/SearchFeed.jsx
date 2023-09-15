@@ -2,7 +2,7 @@ import "./SearchFeed.css";
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getMovieSearchResults } from "../../utils/fetchFromApi";
-import { Loader, MovieCard, SearchBar } from "../../components";
+import { Error, Loader, MovieCard, SearchBar } from "../../components";
 const SearchFeed = ({ handleSearch, handleChange, handleSubmit }) => {
   const { movieTitle } = useParams();
   const [movies, setMovies] = useState([]);
@@ -19,12 +19,16 @@ const SearchFeed = ({ handleSearch, handleChange, handleSubmit }) => {
           setLoading(false);
         });
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }, [movieTitle]);
 
   if (loading) {
     return <Loader />;
+  }
+
+  if (movies.length === 0) {
+    return <Error />;
   }
   return (
     <>
