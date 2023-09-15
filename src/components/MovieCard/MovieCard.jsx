@@ -7,11 +7,7 @@ const MovieCard = ({ item: { title, release_date, poster_path, id } }) => {
   const utcReleaseDate = releaseDate.toLocaleDateString("en-US", options);
 
   return (
-    <Link
-      data-testid="movie-card"
-      className="movie__card"
-      to={`/movie-details/${id}`}
-    >
+    <Link data-testid="movie-card" className="movie__card" to={`/movie/${id}`}>
       <img
         src={
           poster_path
