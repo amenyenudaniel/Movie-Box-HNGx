@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-const url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
+const url = "https://api.themoviedb.org/3/movie/top_rated";
 
 const options = {
   headers: {
