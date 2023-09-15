@@ -34,9 +34,17 @@ const MovieDetails = () => {
   }, []);
 
   const releaseDate = new Date(movieDetails?.release_date);
-  const options = { year: "numeric" };
+  const options = {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZoneName: "short",
+  };
   const utcReleaseDate = releaseDate.toLocaleDateString("en-US", options);
-
   if (loading) {
     return <Loader />;
   }
