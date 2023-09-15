@@ -35,13 +35,15 @@ const Home = ({ handleSearch, handleChange, handleSubmit, movieTitle }) => {
   useEffect(() => {
     try {
       setLoading(true);
-      getInitialMovies().then((data) => {
-        setMovie(data?.results);
-      });
+      getInitialMovies()
+        .then((data) => {
+          setMovie(data?.results);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } catch (error) {
       alert(error);
-    } finally {
-      setLoading(false);
     }
   }, []);
 

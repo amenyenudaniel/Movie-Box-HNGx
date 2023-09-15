@@ -7,12 +7,12 @@ const SearchBar = ({ handleChange, handleSubmit, movieTitle }) => {
       <div className="input__container">
         <input
           type="text"
-          placeholder="What do you want to watch?"
+          placeholder="Search Movie..."
           required
           onChange={handleChange}
           value={movieTitle}
         />
-        <img src={SearchIcon} alt="search-icon" />
+        <img src={SearchIcon} alt="search-icon" onClick={handleSubmit} />
       </div>
     </form>
   );

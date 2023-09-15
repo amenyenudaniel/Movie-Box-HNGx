@@ -40,7 +40,14 @@ const App = () => {
           path="/"
         />
         <Route
-          element={<SearchFeed query={movieTitle} />}
+          element={
+            <SearchFeed
+              handleSearch={handleSearch}
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              movieTitle={movieTitle}
+            />
+          }
           path="/search/:movieTitle"
         />
         <Route element={<MovieDetails />} path="/movie-details/:id" />

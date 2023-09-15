@@ -8,10 +8,10 @@ const MovieDetails = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const apiKey = "6d77f6ad74fe305e31119672f2252108";
-    const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
 
+  const apiKey = "6d77f6ad74fe305e31119672f2252108";
+  const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
+  useEffect(() => {
     setLoading(true);
     try {
       fetch(apiUrl)
@@ -23,13 +23,14 @@ const MovieDetails = () => {
         })
         .then((data) => {
           setMovieDetails(data);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     } catch (error) {
       alert("An Error Ocurred. Please try again", error);
-    } finally {
-      setLoading(false);
     }
-  }, [id]);
+  }, []);
 
   const releaseDate = new Date(movieDetails?.release_date);
   const options = { year: "numeric" };

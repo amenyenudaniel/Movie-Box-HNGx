@@ -1,4 +1,5 @@
 import "./Moviecard.css";
+import placeholder from "../../assets/placeholder__img.webp";
 import { Link } from "react-router-dom";
 const MovieCard = ({ item: { title, release_date, poster_path, id } }) => {
   const releaseDate = new Date(release_date);
@@ -12,7 +13,11 @@ const MovieCard = ({ item: { title, release_date, poster_path, id } }) => {
       to={`/movie-details/${id}`}
     >
       <img
-        src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+        src={
+          poster_path
+            ? `https://image.tmdb.org/t/p/original/${poster_path}`
+            : { placeholder }
+        }
         alt="movie__poster"
         data-testid="movie-poster"
         loading="lazy"

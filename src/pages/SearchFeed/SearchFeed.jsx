@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getMovieSearchResults } from "../../utils/fetchFromApi";
 import { Loader, MovieCard, SearchBar } from "../../components";
-const SearchFeed = () => {
+const SearchFeed = ({ handleSearch, handleChange, handleSubmit }) => {
   const { movieTitle } = useParams();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -11,15 +11,17 @@ const SearchFeed = () => {
   useEffect(() => {
     setLoading(true);
     try {
-      getMovieSearchResults(`${movieTitle}`).then((data) => {
-        setMovies(data?.results);
-      });
+      getMovieSearchResults(`${movieTitle}`)
+        .then((data) => {
+          setMovies(data?.results);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } catch (error) {
       alert(error);
-    } finally {
-      setLoading(false);
     }
-  }, [loading, movies, movieTitle]);
+  }, [movieTitle]);
 
   if (loading) {
     return <Loader />;
@@ -32,7 +34,11 @@ const SearchFeed = () => {
           <h3>MovieBox</h3>
         </Link>
 
-        <SearchBar />
+        <SearchBar
+          handleSearch={handleSearch}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
       </div>
       <h1 className="search__name">
         Search Results For: <span>{movieTitle}</span>
