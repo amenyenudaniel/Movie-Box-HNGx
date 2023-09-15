@@ -13,6 +13,7 @@ const MovieDetails = () => {
   const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
   useEffect(() => {
     setLoading(true);
+    console.log(movieDetails);
     try {
       fetch(apiUrl)
         .then((response) => {
@@ -64,7 +65,6 @@ const MovieDetails = () => {
             <h3 data-testid="movie-title">{movieDetails?.title}</h3>
             <p className="dot">.</p>
             <p data-testid="movie-release-date">{utcReleaseDate}</p>
-
             <p className="dot">.</p>
 
             <div className="genre__container">
@@ -76,6 +76,7 @@ const MovieDetails = () => {
             </div>
           </div>
           <p className="status">{movieDetails?.status}</p>
+          <p className="runtime">{movieDetails?.runtime} Minutes</p>
           <div className="movie__overview">
             <p>{movieDetails?.overview}</p>
           </div>

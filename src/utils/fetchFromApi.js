@@ -2,9 +2,6 @@
 
 import axios from "axios";
 
-//   api key
-// api access token eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDc3ZjZhZDc0ZmUzMDVlMzExMTk2NzJmMjI1MjEwOCIsInN1YiI6IjY0ZmYyMjQxMmRmZmQ4MDExZGYwOTViOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.OSqvBnkj_7O4c2oN039K3sNZDuUX7YZMqJlNw0sLoTg
-
 const url = "https://api.themoviedb.org/3/trending/movie/day?language=en-US";
 
 const options = {
@@ -42,10 +39,3 @@ export const getMovieSearchResults = async (movieTitle) => {
     console.log(error);
   }
 };
-
-try {
-  const response = await axios.request(options);
-  console.log(response.data);
-} catch (error) {
-  console.error(error);
-}

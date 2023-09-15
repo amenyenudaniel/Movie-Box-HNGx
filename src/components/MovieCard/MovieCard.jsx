@@ -24,7 +24,6 @@ const MovieCard = ({ item: { title, release_date, poster_path, id } }) => {
       />
       <div className="movie__content">
         <h6 data-testid="movie-title">
-          {" "}
           {title.length > 30 ? `${title.substring(0, 25)}... ` : title}
         </h6>
         <p data-testid="movie-release-date">{utcReleaseDate}</p>
